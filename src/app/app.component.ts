@@ -11,16 +11,15 @@ import { UserService } from './user.service';
 export class AppComponent {
   constructor(private userService: UserService, private auth: AuthService, router: Router) {
     auth.user$.subscribe(user => {
-      if (user) {
-        userService.save(user);
+      if(!user) return;
 
-        let returnUrl = localStorage.getItem('returnUrl');
+      userService.save(user);
 
-        if (!returnUrl) return;
+      let returnUrl = localStorage.getItem('returnUrl');
+      if (!returnUrl) return;
 
-        localStorage.removeItem('returnUrl');
-        router.navigateByUrl(returnUrl);
-      }
-    })
+      localStorage.removeItem('returnUrl');
+      router.navigateByUrl(returnUrl);
+    });
   }
 }
