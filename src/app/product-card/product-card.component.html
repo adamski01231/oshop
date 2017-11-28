@@ -1,11 +1,10 @@
 <div class="card">
-  <img class="card-img-top" [src]="product.imageUrl" alt="{{ product.title }}">
-  <img class="card-img-top" [src]="(product.imageUrl) ? imageUrl : 'http://www.partwell.com/i/others/empty-product-large.png'">
+  <img class="card-img-top" [src]="(product.imageUrl) ? product.imageUrl : 'http://www.partwell.com/i/others/empty-product-large.png'" alt="{{ product.title }}">
   <div class="card-body">
     <h4 class="card-title">{{ product.title }}</h4>
     <p class="card-text">{{ product.price | currency:'USD':true }}</p>
   </div>
-  <div class="card-footer">
+  <div *ngIf="showActions" class="card-footer">
     <a *ngIf="showActions" href="#" class="btn btn-primary btn-block">Add to cart</a>
   </div>
 </div>

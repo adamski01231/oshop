@@ -1,3 +1,4 @@
+import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './../../product.service';
 import { CategoryService } from './../../category.service';
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/take';
 })
 export class ProductFormComponent implements OnInit {
   categories$;
-  product = {};
+  product = { title: null, price: null, category: null, imageUrl: null } ;
   id;
 
   constructor(
