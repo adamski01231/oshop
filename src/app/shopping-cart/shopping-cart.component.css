@@ -1,0 +1,19 @@
+
+.col-thumbnail {
+    width: 100px;
+}
+
+.col-quantity {
+    width: 230px;
+}
+
+.col-price {
+    width: 200px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-size: cover;
+}
