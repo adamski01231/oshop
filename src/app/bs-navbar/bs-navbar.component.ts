@@ -13,6 +13,7 @@ import { AppUser } from './../models/app.user';
 export class BsNavbarComponent implements OnInit {
   appUser: AppUser;
   cart$: Observable<ShoppingCart>;
+  crt: ShoppingCart;
 
   constructor(private auth: AuthService, private shoppingCartService: ShoppingCartService) { }
 
